@@ -15,7 +15,7 @@ API](https://github.com/ericmoritz/crdt)
     with Loader(LWWSet, bucket," "eric") as (loader, friend_set):
 	    friend_set.add("tom")
 
-What just happened?  
+### What just happened?  
 
 1. The loader fetched the riak object at friends/eric
 1. If the object did not exist, a new LWWSet is created
