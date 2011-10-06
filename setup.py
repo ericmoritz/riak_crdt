@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages
-import sys, os
+import sys
+import os
 
 version = '0.1'
 
@@ -8,7 +9,8 @@ setup(name='riak_crdt',
       description="A Riak adapter to the CRDT toolbox",
       long_description="""\
 """,
-      classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
+      # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
+      classifiers=[],
       keywords='',
       author='',
       author_email='',
