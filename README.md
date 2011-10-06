@@ -13,13 +13,24 @@ API](https://github.com/ericmoritz/crdt)
     bucket = client.bucket("friends")
 
     with Loader(LWWSet, bucket," "eric") as (loader, friend_set):
-	    friend_set.add("eric")
+	    friend_set.add("tom")
 
 What just happened?  
 
-1. The loader fetch the riak object at friends/eric
+1. The loader fetched the riak object at friends/eric
 1. If the object did not exist, a new LWWSet is created
 1. If the object did exist but had siblings, the LWWSet.merge method
-   resolves the conflict
+   resolves the conflict.
 1. Otherwise, a LWWSet is used using the riak object's payload
 1. After the with block concludes, the Loader stores the object
+
+## Can you use this with other CRDT classes?
+
+Sure you can.  You can extend the `crdt.StateCRDT` class and define
+your own `payload` and `value` properties and `merge(cls, X, Y)`
+method to emulate a CRDT but have your own application specific
+conflict resolution code.
+
+Refer to the [crdt
+README](https://github.com/ericmoritz/crdt/blob/master/README.md)
+for more details.
