@@ -24,13 +24,6 @@ API](https://github.com/ericmoritz/crdt)
 1. Otherwise, a LWWSet is used using the riak object's payload
 1. After the with block concludes, the Loader stores the object
 
-## Can you use this with other CRDT classes?
-
-Sure you can.  You can extend the `crdt.StateCRDT` class and define
-your own `payload` and `value` properties and `merge(cls, X, Y)`
-method to emulate a CRDT but have your own application specific
-conflict resolution code.
-
 Refer to the [crdt
 README](https://github.com/ericmoritz/crdt/blob/master/README.md)
 for more details.
